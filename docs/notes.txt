@@ -1,0 +1,52 @@
+1. Encrypt a stored file with key that i have
+
+Licenser
+ Function
+  - answer queries about capabilites and counts
+  - updte capabilities and counts 
+  - uses simeple data
+ Intrface:
+  - HasCapability  
+  - HasQuantity
+  - DecreaseQuantity
+  - UpdateLicenceState 
+ Uses:
+  - Store 
+  - Veryfier
+   
+Store:
+ Function
+  - Stores current state
+  - Retrieves current state
+ Interface
+  - Store
+  - Retrieve
+ Uses
+  - Encryptor
+
+Veryfier:
+  Function
+   - Verifies that sent update is encrypted with correct key
+  Interface
+   - Verify
+  Uses
+   - Keystore
+
+Encryptor 
+ Function
+  - Encrypts and decrypts arbitrary bytes
+ Interface
+  - Encrypt
+  - Decrypt
+ Uses:
+  - Keystore
+
+Keystore
+  - Stores obfuscated secret 
+  - Stores obfuscated pubkey
+ Interface:
+  - GetPublicKey
+  - GetSecret
+
+HomeCaller
+  - Can request updates from central server 
